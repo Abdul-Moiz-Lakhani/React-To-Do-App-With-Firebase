@@ -10,47 +10,20 @@ export default class RegistrationPage extends Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      valid : true
-    }
-    
+ 
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
-  }
-
-  validity(someArg) {
-    this.setState({
-      valid : someArg
-    })
   }
 
   handleOnSubmit(e) {
 
-    /* e.preventDefault(); */
-
-    if (this.state.valid === false) {
-      alert("Cannot register with this Username!");
-    }
-    else if (this.state.valid === true) {
+     e.preventDefault(); 
       
       let userName = document.getElementById('userName').value;
       let userKey = document.getElementById('key').value;
-
-      if(userName === "" || userKey === "")
-      {
-          alert("User Name or Key is missing...!");
-      }
-      else
-      {
-        localStorage.setItem(userKey,userName);
-        alert("Congrats! You are successfully Registered");
-          /* firebaseApp.auth().createUserWithEmailAndPassword(userName,userKey).catch(error => {
-          console.log('Error : ', error); 
-            
-          })
-          */
-      }
-    }
+      
+      firebaseApp.auth().createUserWithEmailAndPassword(userName,userKey).catch(error => {
+      console.log('Error : ', error); 
+      })
   }
 
   render() {
@@ -61,7 +34,7 @@ export default class RegistrationPage extends Component {
           <form onSubmit={this.handleOnSubmit}>
               <label htmlFor="userName">ENTER USERNAME</label>
               <br />
-              <InputComponent inputFieldClassName="inputStyle" divClassName="userInputBox" type="text" name="userName" id="userName" initialBorderColor="darkgrey" focusBorderColor="orange" validity={this.validity.bind(this)} />
+              <InputComponent inputFieldClassName="inputStyle" divClassName="userInputBox" type="text" name="userName" id="userName" initialBorderColor="darkgrey" focusBorderColor="orange" />
               <br />
               <label htmlFor="key">ENTER KEY</label>
               <br />

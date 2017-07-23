@@ -6,8 +6,7 @@ export default class InputComponent extends Component {
     super();
       
     this.state = {
-      borderColor : "",
-      validity : ""
+      borderColor : ""
     }
         
     this.handleOnFocus = this.handleOnFocus.bind(this);
@@ -28,35 +27,6 @@ export default class InputComponent extends Component {
       this.setState({
         borderColor : this.initialBorderColor
       });
-
-      var validity = this.props.validity;
-
-      var flag = true;
-      
-      if (e.target.id === 'userName') {
-
-        for (let i = 0; i < localStorage.length; i++)
-        {
-            let x = localStorage.key(i);
-            let val = localStorage.getItem(x);
-
-            let uName = document.getElementById('userName').value;
-          
-            if (uName === val)
-            {
-                alert("This Username already exists. Please choose different.");
-                flag = false;  
-            }
-        }
-
-        if (!flag) {
-          this.setState({
-            validity : false
-          }, () => {
-            validity(this.state.validity)
-          }) 
-        }
-      }
   }
 
   render() {
