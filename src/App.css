@@ -255,6 +255,8 @@ h1
     color: orange;
     font-size: 26px;
     font-weight: bold;
+    margin-top: 14px;
+    margin-bottom: 18px;
 }
 
 label
@@ -277,7 +279,7 @@ label
     background: transparent;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     border: none;
     outline: none;
 }
@@ -295,7 +297,6 @@ label
     background-color: orange;
     border: none;
     border-radius: 5px;
-    margin-top: 10px;
     width: 110px;
     height: 35px;
     font-size: 16px;
@@ -316,8 +317,41 @@ label
 
 #btn
 {
+    position: absolute;
     text-align: center;
     width: 100%;
+    top: 460px;
+    right: 0;
+    left: 0;
+}
+
+#errorMessage
+{
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: -20px;
+    border: 1px solid red;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size : 16px;
+    text-align: center;
+    border-radius: 5px;
+    color: red;
+    width: 90%;
+    background-color: rgba(255, 0, 0, 0.2);
+    animation-name: example;
+    animation-duration: 1s;
+    animation-direction: ease-out;
+}
+
+@keyframes example {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.hide
+{
+    display: none; 
 }
 
 .buttonStyle
@@ -343,7 +377,6 @@ label
     text-decoration: none;
     background: none;
     border: none;
-    margin-top: 30px;
     cursor: pointer;
 }
 

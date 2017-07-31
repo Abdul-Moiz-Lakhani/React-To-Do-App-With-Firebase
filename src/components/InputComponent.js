@@ -41,7 +41,7 @@ export default class InputComponent extends Component {
     
     return (
         <div className={this.props.divClassName} style={borderStyle}>
-          <input className={this.props.inputFieldClassName} type={this.props.type} name={this.props.name} ref={this.props.id} id={this.props.id} onFocus={this.handleOnFocus} onBlur={this.handleOnBlur} placeholder="Enter Here" />
+          <input className={this.props.inputFieldClassName} type={this.props.type} name={this.props.name} ref={this.props.id} id={this.props.id} onFocus={this.handleOnFocus} onBlur={this.handleOnBlur} placeholder="Enter Here" required/>
         </div>
     )
   }

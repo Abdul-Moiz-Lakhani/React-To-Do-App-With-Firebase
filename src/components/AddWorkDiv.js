@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
-
 import InputComponent from './InputComponent';
 
 export default class AddWorkDiv extends Component {
+  
+  constructor(props) {
+    super(props);
+    
+    this.showLogoutAndListBtn = this.showLogoutAndListBtn.bind(this);
+  }
+  
+  showLogoutAndListBtn() {
+  }
 
   render() {
     return (
       <div id="addWork_div">
-                                
+
+        {this.showLogoutAndListBtn()}
+
         <h3 id="greet">Hello,</h3>
         <h2 id="greetName">Abdul Moiz</h2>
         <h2 id="welcome">Welcome to To Do App</h2>
